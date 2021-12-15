@@ -16,10 +16,10 @@ jobs:
         run: echo Hello, world!
 
   docker:
-    uses: chitransh93/CompositeAction/action.yml@main
+    uses: chitransh93/ReusableWorkflow/.github/workflows/buildAndPublishDockerImage.yml@main
     with:
-      image_name: my-awesome-app
-      tag: $GITHUB_RUN_NUMBER
+      image_name: ${{ secrets.DOCKER_REPO1 }}
+      tag: latest2
     secrets:
-      registry_username: ${{secrets.REGISTRY_USERNAME}}
-      registry_password: ${{secrets.REGISTRY_PASSWORD}}
+      registry_username: ${{secrets.DOCKER_USERNAME}}
+      registry_password: ${{secrets.DOCKER_PASSWORD}}
