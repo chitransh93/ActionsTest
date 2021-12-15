@@ -18,7 +18,7 @@ jobs:
   docker:
     uses: chitransh93/ReusableWorkflow/.github/workflows/buildAndPublishDockerImage.yml@main
     with:
-      image_name: ${{ secrets.DOCKER_REPO1 }}
+      image_name: chitransh93/maven-container
       tag: latest2
     secrets:
       registry_username: ${{secrets.DOCKER_USERNAME}}
