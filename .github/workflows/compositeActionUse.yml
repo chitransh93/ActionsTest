@@ -15,9 +15,9 @@ jobs:
 
       # Uses the Composite Action
       - name: Build and Push the image
-        uses: n3wt0n/CompositeAction@main
+        uses: chitransh93/CompositeAction/action.yml@main
         with:
-          registry_username: ${{secrets.REGISTRY_USERNAME}}
-          registry_password: ${{secrets.REGISTRY_PASSWORD}}
-          image_name: my-awesome-app
+          registry_username: ${{secrets.DOCKER_USERNAME}}
+          registry_password: ${{secrets.DOCKER_PASSWORD}}
+          image_name: maven-container
           tag: $GITHUB_RUN_NUMBER
